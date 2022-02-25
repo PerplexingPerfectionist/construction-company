@@ -44,13 +44,20 @@ body {
 }
 
 .grey-back {
-    background-color: var(--lt_grey);
+    background-color: rgb(245, 245, 245);
+}
+
+.stroke {
+    text-shadow: 1px 0 0 black,
+                 0 1px 0 black,
+                 -1px 0 0 black,
+                 0 -1px 0 black;
 }
 
 /* Home Page */
 
 #hero {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/reno-space.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/reno-space.webp);
     background-size: cover;
     background-position: bottom center;
     background-attachment: fixed;
@@ -101,27 +108,27 @@ body {
 }
 
 .gallery-img-1 {
-    background-image: url(../assets/gallery1.jpg);
+    background-image: url(../assets/gallery1.webp);
     background-size: cover;
 }
 
 .gallery-img-2 {
-    background-image: url(../assets/gallery2.jpg);
+    background-image: url(../assets/gallery2.webp);
     background-size: cover;
 }
 
 .gallery-img-3 {
-    background-image: url(../assets/gallery3.jpg);
+    background-image: url(../assets/gallery3.webp);
     background-size: cover;
 }
 
 .gallery-img-4 {
-    background-image: url(../assets/gallery4.jpg);
+    background-image: url(../assets/gallery4.webp);
     background-size: cover;
 }
 
 .gallery-img-5 {
-    background-image: url(../assets/gallery5.jpg);
+    background-image: url(../assets/gallery5.webp);
     background-size: cover;
 }
 
@@ -131,11 +138,10 @@ body {
 }
 
 #footer {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/footer.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/footer.webp);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    height: 100%;
     background-repeat: no-repeat;
 }
 
@@ -159,7 +165,7 @@ body {
 /* About Page */
 
 #about-hero {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/team.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/team.webp);
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
@@ -171,8 +177,16 @@ body {
     background-color: var(--secondary);
 }
 
+#about-list ul {
+    list-style-type: none;
+}
+
+#about-list ul li:before {
+    content: "\2713\0020";
+}
+
 #stats {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/sawing.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/sawing.webp);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -189,7 +203,7 @@ body {
 /* Services Page */
 
 #service-hero {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/tools.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/tools.webp);
     background-size: cover;
     background-position: bottom center;
     background-attachment: fixed;
@@ -218,34 +232,39 @@ body {
     color: white;
     background-color: var(--secondary);
     border: 2px solid var(--secondary);
+    text-shadow: 1px 0 0 black,
+                 0 1px 0 black,
+                 -1px 0 0 black,
+                 0 -1px 0 black;
 }
 
 .quote-btn:hover {
     background-color: white;
     border: 2px solid var(--secondary);
     color: var(--secondary);
+    text-shadow: none;
 }
 
 .img-panel-1 {
-    background-image: url(../assets/gallery5.jpg);
+    background-image: url(../assets/gallery5.webp);
     background-size: cover;
     aspect-ratio: 1;
 }
 
 .img-panel-2 {
-    background-image: url(../assets/gallery4.jpg);
+    background-image: url(../assets/gallery4.webp);
     background-size: cover;
     aspect-ratio: 1;
 }
 
 .img-panel-3 {
-    background-image: url(../assets/gallery3.jpg);
+    background-image: url(../assets/gallery3.webp);
     background-size: cover;
     aspect-ratio: 1;
 }
 
 .img-panel-4 {
-    background-image: url(../assets/gallery2.jpg);
+    background-image: url(../assets/gallery2.webp);
     background-size: cover;
     aspect-ratio: 1;
 }
@@ -253,7 +272,7 @@ body {
 /* Gallery Page */
 
 #gallery-hero {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/houses.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/houses.webp);
     background-size: cover;
     background-position: center center;
 }
@@ -295,4 +314,29 @@ body {
 
 .icon-img:hover {
     background: #1e57c1 !important;
+}
+
+/* Turn off parallax on mobile */
+
+@media screen and (max-width: 1200px) {
+    #hero {
+        background-position: bottom right;
+        background-attachment: scroll;
+    }
+
+    #footer {
+        background-attachment: scroll;
+    }
+
+    #about-hero {
+        background-attachment: scroll;
+    }
+
+    #stats {
+        background-attachment: scroll;
+    }
+
+    #service-hero {
+        background-attachment: scroll;
+    }
 }
